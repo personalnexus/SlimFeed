@@ -23,10 +23,10 @@ using (var subscription = client.Subscribe())
     while (await subscription.ResponseStream.MoveNext(cancellationTokenSource.Token))
     {
         SubscriptionResponse response = subscription.ResponseStream.Current;
-        Console.WriteLine(response switch
+        Console.WriteLine($"{response.InstrumentId}: " + response switch
         {
             { HasError: true } => response.Error,
-            _ => $"Tick bid={response.Bid}, ask={response.Ask}, last={response.Last}"
+            _ => $"bid={response.Bid}, ask={response.Ask}, last={response.Last}, currency={response.Currency}"
         });
     }
 }
