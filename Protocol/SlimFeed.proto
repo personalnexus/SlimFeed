@@ -1,0 +1,43 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "SlimFeed.Protocol";
+
+// Client begins by sending a message identifying itself (in the future, additional sessin level options could be requested here)
+message ClientInfo{
+    string name = 1;
+}
+
+// Server responds identifying itself as well
+message ServerInfo{
+    string name = 1;
+}
+
+// 
+enum SubscriptionType{
+    none = 0;
+    add = 1;
+    remove = 2;
+}
+
+// Clients send a stream of add/remove instrument subscription requests
+message SubscriptionRequest {
+    string instrument_id = 1;
+    SubscriptionType type = 2;
+}
+
+// Server responds with a stream of instrument subscription responses when something about an instrument changes. An error can come at any,
+message SubscriptionResponse {
+    string instrument_id = 1;
+    // If the instrument has an error, only this field is filled and the instrument subscription ends automatically
+    optional string error = 2;
+    // If the instrument has no error, any one of the following fields are filled when they change
+    optional string currency = 3;
+    optional double ask = 4;
+    optional double bid = 5;
+    optional double last = 6;
+}
+
+service SlimFeed {
+  rpc Initialize (ClientInfo) returns (ServerInfo);
+  rpc Subscribe (stream SubscriptionRequest) returns (stream SubscriptionResponse);
+}

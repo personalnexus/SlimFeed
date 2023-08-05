@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlimFeed", "SlimFeed.csproj", "{2BB085FF-3CD8-433F-8964-D04FDBE5A53C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BB085FF-3CD8-433F-8964-D04FDBE5A53C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB085FF-3CD8-433F-8964-D04FDBE5A53C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB085FF-3CD8-433F-8964-D04FDBE5A53C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB085FF-3CD8-433F-8964-D04FDBE5A53C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {575477A0-BD86-439C-BD85-2246C8DE881C}
+	EndGlobalSection
+EndGlobal
