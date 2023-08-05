@@ -12,7 +12,7 @@ message ServerInfo{
     string name = 1;
 }
 
-// 
+// Required in a SubscriptionRequest to identify whether it is add or remove. A none request is ignored.
 enum SubscriptionType{
     none = 0;
     add = 1;
@@ -25,7 +25,7 @@ message SubscriptionRequest {
     SubscriptionType type = 2;
 }
 
-// Server responds with a stream of instrument subscription responses when something about an instrument changes. An error can come at any,
+// Server responds with a stream of instrument subscription responses when something about an instrument changes. An error can come at any time after other non-error responses
 message SubscriptionResponse {
     string instrument_id = 1;
     // If the instrument has an error, only this field is filled and the instrument subscription ends automatically
